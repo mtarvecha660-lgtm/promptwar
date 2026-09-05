@@ -145,7 +145,7 @@ export const ProfileForm: React.FC<ProfileFormProps> = ({
             <select
               value={profile.domain}
               onChange={(e) => onChange({ ...profile, domain: e.target.value })}
-              className="w-full text-sm px-4 py-2.5 bg-zinc-50 border border-zinc-200 focus:outline-none focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 text-zinc-900 transition-all"
+              className="w-full text-sm px-4 py-2.5 bg-zinc-50 border border-zinc-200 focus:outline-none focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 text-zinc-900 transition-all dark:bg-zinc-800 dark:text-white dark:border-zinc-700"
             >
               {DOMAINS.map((domain) => (
                 <option key={domain} value={domain}>
@@ -170,7 +170,7 @@ export const ProfileForm: React.FC<ProfileFormProps> = ({
                     onClick={() => onChange({ ...profile, difficulty: level })}
                     className={`py-2 px-2 text-sm font-medium border transition-colors ${
                       isSelected
-                        ? 'bg-zinc-900 text-white border-zinc-900'
+                        ? 'bg-zinc-900 text-white border-zinc-900 dark:bg-white dark:text-zinc-950 dark:border-zinc-800 dark:hover:bg-zinc-200'
                         : 'bg-zinc-50 text-zinc-600 border-zinc-200 hover:bg-zinc-100'
                     }`}
                   >
@@ -191,7 +191,7 @@ export const ProfileForm: React.FC<ProfileFormProps> = ({
             value={profile.interests || ''}
             onChange={(e) => onChange({ ...profile, interests: e.target.value })}
             placeholder="Any specific constraints or ideas..."
-            className="w-full text-sm px-4 py-2.5 bg-zinc-50 border border-zinc-200 focus:outline-none focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 text-zinc-900 placeholder-zinc-400 transition-all resize-none"
+            className="w-full text-sm px-4 py-2.5 bg-zinc-50 border border-zinc-200 focus:outline-none focus:border-zinc-900 focus:ring-1 focus:ring-zinc-900 text-zinc-900 placeholder-zinc-400 transition-all resize-none dark:bg-zinc-800 dark:text-white dark:border-zinc-700"
           />
         </div>
 
@@ -199,7 +199,7 @@ export const ProfileForm: React.FC<ProfileFormProps> = ({
           <button
             type="submit"
             disabled={isLoading || profile.skills.length === 0}
-            className="w-full py-3.5 px-6 bg-black hover:bg-zinc-800 text-white font-medium text-sm transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full py-3.5 px-6 bg-black text-white font-medium text-sm transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200"
           >
             {isLoading ? (
               <>
